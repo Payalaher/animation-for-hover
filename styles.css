@@ -1,0 +1,99 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.container{
+    height: 40%;
+    width: 90%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* filter: brightness(1); */
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+  
+}
+
+.box{
+    height: 90%;
+    width: 12%;
+    /* background-color: crimson; */
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.34.39\ AM.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   filter: brightness(.1);
+    transition: .2s;
+
+}
+
+.box2{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.34.39\ AM\ \(1\).jpeg);
+}
+
+.box3{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.34.52\ AM.jpeg);
+}
+
+.box4{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.35.07\ AM.jpeg);
+}
+
+.box5{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.35.24\ AM.jpeg);
+}
+
+.box6{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.35.51\ AM.jpeg);
+}
+.box7{
+    background-image: url(/WhatsApp\ Image\ 2024-07-25\ at\ 10.36.13\ AM.jpeg);
+}
+
+.box:hover{
+    filter: brightness(1);
+    transform: translateZ(150px) ;
+}
+
+
+.box:hover + * {
+    filter: brightness(.6);
+
+    transform: translateZ(100px) rotateY(40deg);
+}
+
+.box:hover + * + * {
+    filter: brightness(.4);
+    
+    transform: translateZ(75px) rotateY(20deg);
+}
+
+.box:has(+ *:hover) {
+    filter: brightness(.6);
+    transform: translateZ(100px) rotateY(-40deg);
+}
+
+.box:has(+ * + *:hover) {
+    filter: brightness(.4);
+    transform: translateZ(75px) rotateY(-20deg);
+}
